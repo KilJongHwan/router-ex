@@ -1,5 +1,6 @@
 import "./App.css";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import About from "./pages/About";
 import MyPage from "./pages/MyPage";
 import Setting from "./pages/Setting";
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="/About" element={<About />} />
         <Route path="/MyPage" element={<MyPage />} />
         <Route path="/Setting" element={<Setting />} />

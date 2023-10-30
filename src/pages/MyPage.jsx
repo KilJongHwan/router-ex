@@ -1,15 +1,25 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const MyPage = () => {
   const navigate = useNavigate();
-  return (
-    <>
-      <h1>MyPage</h1>
-      <p>My Info</p>
+  const isLogin = false;
 
-      <button onClick={() => navigate(-1)}>Prev Page</button>
-    </>
-  );
+  if (isLogin) {
+    return (
+      <>
+        <h1>MyPage</h1>
+        <p>My Info</p>
+
+        <button onClick={() => navigate(-1)}>Prev Page</button>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Navigate to="/login" replace={true} />
+      </>
+    );
+  }
 };
 
 export default MyPage;
