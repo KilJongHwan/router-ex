@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const MyPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <h1>MyPage</h1>
       <p>My Info</p>
-      <Link to="/">Home Page</Link>
-      <br />
-      <Link to="/setting">Setting Page</Link>
+
+      <button onClick={() => navigate(-1)}>Prev Page</button>
     </>
   );
 };

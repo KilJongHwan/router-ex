@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  // Link to를 사용하지 않고 다른 페이지로 이동해야할 상황에서 사용하는 Hook
+  const navigate = useNavigate();
   return (
     <>
       <h1>HOME</h1>
       <p>The First Page</p>
-      <Link to="/about">About Page</Link>
+      <button onClick={() => navigate("/about")}>About Page</button>
       <br />
       <Link to="/mypage">My Page</Link>
       <br />

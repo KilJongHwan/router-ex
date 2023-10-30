@@ -2,7 +2,7 @@ import { Link, useSearchParams, useLocation } from "react-router-dom";
 const About = () => {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const detail = searchParams.get("defail");
+  const detail = searchParams.get("detail");
   const mode = searchParams.get("mode");
   const onToggleDetail = () => {
     setSearchParams({ mode, detail: detail === "true" ? false : true });
@@ -20,6 +20,7 @@ const About = () => {
       <p>detail : {detail}</p>
       <p>mode : {mode}</p>
       <button onClick={onToggleDetail}>Toggle detail</button>
+      <br />
       <button onClick={onIncreaseMode}>mode + 1</button>
     </>
   );
