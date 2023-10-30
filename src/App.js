@@ -6,8 +6,9 @@ import MyPage from "./pages/MyPage";
 import Setting from "./pages/Setting";
 import Profile from "./pages/Profile";
 import Article from "./pages/Article";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Articles from "./pages/Articles";
+import Layout from "./pages/Layout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // MyPage와 Setting 페이지 추가 해보기
 // Home 에서 About, MyPage, Setting 페이지 링크 보여주고 이동 하도록
@@ -17,14 +18,18 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/MyPage" element={<MyPage />} />
-        <Route path="/Setting" element={<Setting />} />
-        <Route path="/profiles/:username" element={<Profile />} />
-        <Route path="/Articles" element={<Articles />} />
-        <Route path="/Articles/:id" element={<Article />} />
+        <Route path="/" element={<Login />}>
+          <Route element={<Layout />}>
+            <Route path="/Home" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/MyPage" element={<MyPage />} />
+            <Route path="/Setting" element={<Setting />} />
+            <Route path="/profiles/:username" element={<Profile />} />
+            <Route path="/Articles" element={<Articles />}>
+              <Route path="/Articles/:id" element={<Article />} />
+            </Route>
+          </Route>
+        </Route>
       </Routes>
     </Router>
   );

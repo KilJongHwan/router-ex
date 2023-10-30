@@ -5,7 +5,7 @@ const Setting = () => {
     <>
       <h1>Setting</h1>
       <p>Pages Setting</p>
-      <Link to="/">Home Page</Link>
+      <Link to="/Home">Home Page</Link>
       <br />
       <Link to="/about">About Page</Link>
     </>
