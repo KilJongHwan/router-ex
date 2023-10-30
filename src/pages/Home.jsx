@@ -21,6 +21,9 @@ const Home = () => {
         <li>
           <Link to="/profiles/database">Database Profile</Link>
         </li>
+        <li>
+          <Link to="Articles">Post List</Link>
+        </li>
       </ul>
     </>
   );
